@@ -2,14 +2,12 @@ import styles from "@/styles/Home.module.css";
 import Head from "next/head";
 import React, { useState } from "react";
 import Image from "next/image";
-// import PolyrhythmicSpiral from "../components/PolyrhythmicSpiral";
-import PolyrhythmicSpiral from "../components/Spiral";
 import DaySelector from "../components/DaySelector";
+import Hero from "./Hero";
 import Band from "../components/Band2";
 import Modal from "../components/Modal";
 import Navbar from "../components/Navbar";
 import Sponsors from "../components/Sponsors";
-// import Bubbles from "../components/Bubbles3";
 import FestMap from "@/components/FestMap";
 import Footer from "@/components/Footer";
 
@@ -39,13 +37,12 @@ const MainPage = ({ bandsData, scheduleData }) => {
         <link rel="icon" type="image/png" href="/images/festival.png" />
       </Head>
       <Navbar />
-      <div className={styles.spiralContainer}>
-        <PolyrhythmicSpiral />
+      {/* <div className={styles.spiralContainer}>
         <div className={styles.text}>
-          <p>ColorFoo</p>
-          <p>Festival</p>
+          <p>ColorFoo Festival</p>
         </div>
-      </div>
+      </div> */}
+      <Hero />
       <div className={styles.programBox}>
         <h1 className={styles.header}>Line-up</h1>
         <DaySelector onDayChange={handleDayChange} />
