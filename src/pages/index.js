@@ -9,10 +9,9 @@ import Band from "../components/Band2";
 import Modal from "../components/Modal";
 import Navbar from "../components/Navbar";
 import Sponsors from "../components/Sponsors";
-import Bubbles from "../components/Bubbles3";
+// import Bubbles from "../components/Bubbles3";
 import FestMap from "@/components/FestMap";
 import Footer from "@/components/Footer";
-// import styles from "./Home.module.css";
 
 const MainPage = ({ bandsData, scheduleData }) => {
   const [selectedDay, setSelectedDay] = useState();
@@ -52,22 +51,12 @@ const MainPage = ({ bandsData, scheduleData }) => {
         <DaySelector onDayChange={handleDayChange} />
       </div>
       <div className={styles.bcontainer}>
-        <Bubbles />
         <div className={styles.container}>
           <div className={styles.bandBox}>
             {bandsData.map((band, index) => (
-              <Band
-                key={band.id}
-                band={band}
-                onBandClick={handleBandClick}
-                selectedDay={selectedDay}
-                schedule={scheduleData}
-                index={index}
-              />
+              <Band key={band.id} band={band} onBandClick={handleBandClick} selectedDay={selectedDay} schedule={scheduleData} index={index} />
             ))}
-            {isModalOpen && selectedBand && (
-              <Modal band={selectedBand} onClose={closeModal} />
-            )}
+            {isModalOpen && selectedBand && <Modal band={selectedBand} onClose={closeModal} />}
           </div>
         </div>
       </div>
@@ -90,14 +79,10 @@ const MainPage = ({ bandsData, scheduleData }) => {
 };
 
 export async function getServerSideProps() {
-  const bandsResponse = await fetch(
-    "https://hollow-glowing-gladiolus.glitch.me/bands"
-  );
+  const bandsResponse = await fetch("https://hollow-glowing-gladiolus.glitch.me/bands");
   const bandsData = await bandsResponse.json();
 
-  const scheduleResponse = await fetch(
-    "https://hollow-glowing-gladiolus.glitch.me/schedule"
-  );
+  const scheduleResponse = await fetch("https://hollow-glowing-gladiolus.glitch.me/schedule");
   const scheduleData = await scheduleResponse.json();
 
   return { props: { bandsData, scheduleData } };
