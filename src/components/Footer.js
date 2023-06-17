@@ -33,23 +33,7 @@ import styles from "./Footer.module.css";
 // }
 
 export default function Footer() {
-  const links = [
-    "Privacy Policy",
-    "Terms & Conditions",
-    "Rules & Regulations",
-    "Installments rules",
-    "Press",
-    "Contacts",
-    "Careers",
-    "Volunteers",
-    "Partners & Sponsors",
-    "Food Vendors",
-    "Fashion & Fair Vendors",
-    "Ambassadors",
-    "Tickets Info",
-    "Request Invoice",
-    "Goodies",
-  ];
+  const links = ["Privacy Policy", "Terms & Conditions", "Press", "Volunteers", "Food Vendors", "Tickets Info"];
 
   const columns = [];
   for (let i = 0; i < links.length; i += 3) {
