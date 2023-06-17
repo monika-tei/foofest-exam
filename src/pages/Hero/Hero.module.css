@@ -1,1 +1,7 @@
 /*Create a hero section with festival title and the CTA*/
+
+.container {
+  background-color: hotpink;
+  width: 100%;
+  height: 70vh;
+}

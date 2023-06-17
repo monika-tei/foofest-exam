@@ -18,7 +18,7 @@ import styles from "./Hero.module.css";
 
 function Hero() {
   return (
-    <section>
+    <section className={styles.container}>
       <p>test</p>
     </section>
   );
