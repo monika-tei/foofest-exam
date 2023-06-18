@@ -17,19 +17,14 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* align-items: center; */
+  align-items: center;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
-  max-width: 75%;
-  max-height: 90%;
+  max-width: 55%;
+  max-height: 80%;
   position: relative;
-  overflow: auto;
-}
-
-.image {
-  object-fit: cover;
-  position: absolute;
+  /* overflow: auto; */
 }
 
 .modalContent .text {
@@ -39,20 +34,25 @@
 }
 
 .modalContent .text h2 {
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 .modalContent .text p {
-  padding: 10px;
+  font-size: 0.9rem;
+  padding: 0.625rem;
 }
 
 .modalContent .logo {
   flex: 1;
   padding-left: 20px;
-  text-align: right;
+  /* text-align: right; */
   position: relative;
-  /* width: 100%; */
+  width: 100%;
   height: 500px;
+}
+
+.logoCredits {
+  font-size: 8px;
 }
 
 .modalContent button {
@@ -84,17 +84,35 @@
 }
 
 /*Responsive*/
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .modalContent {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  .modalContent .text p {
+    font-size: 0.7rem;
+    padding: 0.625rem;
   }
 
   .modalContent .logo {
+    flex: inherit;
     padding-left: 0;
   }
 
-  .modalContent .logo img {
-    display: none;
+  .modalContent .text {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .modalContent .text {
+    padding: 0;
+  }
+
+  .modalContent .text p {
+    font-size: 0.7rem;
   }
 }
