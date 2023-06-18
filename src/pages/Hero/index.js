@@ -1,5 +1,6 @@
 // import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "./Hero.module.css";
 // const Hero = () => {
 //   return (
@@ -17,10 +18,18 @@ import styles from "./Hero.module.css";
 // };
 
 function Hero() {
+  const router = useRouter();
+
   return (
     <div className={styles.container}>
       <Image className={styles.heroImage} src="/images/background.jpg" alt="Foofest Hero" fill style={{ objectFit: "cover" }} />
-      <h1 className={styles.heroHeader}>colorFOO fest</h1>
+      <div className={styles.heroText}>
+        <h1 className={styles.heroHeader}>colorFOO fest</h1>
+
+        <button className={styles.heroCTA} onClick={() => router.push("/booking")}>
+          Book now
+        </button>
+      </div>
     </div>
   );
 }
