@@ -1,6 +1,6 @@
 // import React from "react";
+import Image from "next/image";
 import styles from "./Hero.module.css";
-
 // const Hero = () => {
 //   return (
 //     <section className={styles.section}>
@@ -18,9 +18,10 @@ import styles from "./Hero.module.css";
 
 function Hero() {
   return (
-    <section className={styles.container}>
-      <p>test</p>
-    </section>
+    <div className={styles.container}>
+      <Image className={styles.heroImage} src="/images/background.jpg" alt="Foofest Hero" fill style={{ objectFit: "cover" }} />
+      <h1 className={styles.heroHeader}>colorFOO fest</h1>
+    </div>
   );
 }
 

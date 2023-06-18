@@ -1,7 +1,30 @@
 /*Create a hero section with festival title and the CTA*/
 
 .container {
-  background-color: hotpink;
+  /* position: relative;
   width: 100%;
-  height: 70vh;
+  height: 85vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 85vh;
+}
+
+.heroImage {
+  /* z-index: 0; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.heroHeader {
+  position: relative;
+  color: pink;
+  z-index: 1;
 }

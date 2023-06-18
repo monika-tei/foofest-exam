@@ -10,7 +10,6 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  /* background-color: #000; */
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   color: #fff;
@@ -29,13 +28,13 @@
   gap: 1rem;
 }
 
-.navLink {
-  color: #fff;
-  text-decoration: none;
+.navLinks div {
+  cursor: crosshair;
+  transition: 0.3s ease-in;
 }
 
-.navLinks div {
-  cursor: pointer;
+:is(.navLinks div):hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 450px) {
